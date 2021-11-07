@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/harsh/tessim_app/tessim/test_scripts/offgrid_inverter/offgrid_inverter.cpp
+offgrid_inverter.hpp
+/home/harsh/tessim_app/tessim/test_scripts/offgrid_inverter/offgrid_inverter.hpp
+math.h
+-
+
+/home/harsh/tessim_app/tessim/test_scripts/offgrid_inverter/offgrid_inverter.hpp
+stdio.h
+-
+
