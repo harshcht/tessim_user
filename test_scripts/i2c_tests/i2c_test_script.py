@@ -1,9 +1,10 @@
-#from pathlib import Path
-import sys
-#path = str(Path(Path(__file__).parent.absolute()).parent.absolute())
-sys.path.insert(0, '/home/harsh/tessim_app/tessim')
-import cli_commands as cli
+import os
 
+tessim_path = os.environ['TESSIM_PATH']
+import sys
+sys.path.insert(0, tessim_path)
+import cli_commands as cli
+from matplotlib import pyplot as plt
 #SCENARIIO_1 : mcu as slave debugger as master : Send slave address and then send data
 
 #case 1: ack of master is enabledmega

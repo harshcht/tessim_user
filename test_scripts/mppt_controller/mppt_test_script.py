@@ -1,8 +1,10 @@
+import os
+
+tessim_path = os.environ['TESSIM_PATH']
 import sys
-sys.path.insert(0, '/home/harsh/tessim_app/tessim')
+sys.path.insert(0, tessim_path)
 
 import cli_commands as cli
-
 atmega = cli.mcu(cli.architecture_family.avr, cli.avr_mcu.atmega2560, b'/home/harsh/tessim_app/tessim/test_scripts/mppt_controller/compiled/mppt_test.hex', 1000000)
 nodes = cli.createNodes(100)
 atmega.connectNodes(nodes)

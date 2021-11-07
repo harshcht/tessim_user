@@ -1,7 +1,10 @@
-import sys
-sys.path.insert(0, '/home/harsh/tessim_app/tessim')
+import os
 
-import python_cli_commands as cli
+tessim_path = os.environ['TESSIM_PATH']
+import sys
+sys.path.insert(0, tessim_path)
+
+import cli_commands as cli
 from matplotlib import pyplot as plt
 
 mt = cli.dcMotor(0.05,0.05 , 0.5, 0.0015, 0.00025, 0.001)

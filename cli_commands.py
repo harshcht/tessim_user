@@ -2,11 +2,11 @@ import ctypes
 from ctypes import c_char_p, c_double, c_void_p, cdll
 import enum
 import math
-import csv
+import os
 
-record = "record.csv"
+tessim_path = os.environ['TESSIM_PATH']
 
-tessim = cdll.LoadLibrary('bin/libtessim.so')
+tessim = cdll.LoadLibrary(tessim_path  + '/bin/libtessim.so')
 
 parts = []
 global_time_passed = 0
