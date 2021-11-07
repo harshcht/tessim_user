@@ -1,3 +1,0 @@
-/home/harsh/tessim_app/tessim/test_scripts/offgrid_inverter/build/CMakeFiles/edit_cache.dir
-/home/harsh/tessim_app/tessim/test_scripts/offgrid_inverter/build/CMakeFiles/rebuild_cache.dir
-/home/harsh/tessim_app/tessim/test_scripts/offgrid_inverter/build/CMakeFiles/inverter.dir
