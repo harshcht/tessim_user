@@ -609,3 +609,13 @@ class uart_debugger :
 
     def txSettings(self, n_bits, parity, n_stop_bits) :
         tessim.setUSARTSettings(self.debugger_obj, n_bits, parity, n_stop_bits)
+
+
+class encoder :
+    encoder_obj = None
+    def __init__(self, n, speed, a, b, frac, phase_dif):
+        self.encoder_obj = tessim.createRotaryEncoder(n, speed, a, b, frac, phase_dif)
+        parts.append(self)
+
+    def Exec(self, time):
+        tessim.execEncoder(time, self.encoder_obj)
