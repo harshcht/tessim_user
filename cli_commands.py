@@ -229,6 +229,9 @@ tessim.setUSARTTxState.argtypes = [ctypes.c_void_p, usart_tx_state]
 tessim.setUSARTParity.argtypes = [ctypes.c_void_p, t_parity]
 tessim.setUSARTBits.argtypes = [ctypes.c_void_p, ctypes.c_int]
 tessim.setUSARTSettings.argtypes = [ctypes.c_void_p, ctypes.c_int, t_parity, ctypes.c_int]
+tessim.createRotaryEncoder.argtypes = [ctypes.c_int, ctypes.c_int, ctypes.c_int, ctypes.c_int, ctypes.c_double, ctypes.c_double]
+tessim.createRotaryEncoder.restype = ctypes.c_void_p
+tessim.execEncoder.argtypes = [ctypes.c_double, ctypes.c_void_p]
 
 
 def createNodes(num) :
