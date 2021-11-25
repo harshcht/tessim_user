@@ -232,6 +232,7 @@ tessim.setUSARTSettings.argtypes = [ctypes.c_void_p, ctypes.c_int, t_parity, cty
 tessim.createRotaryEncoder.argtypes = [ctypes.c_int, ctypes.c_int, ctypes.c_int, ctypes.c_int, ctypes.c_double, ctypes.c_double]
 tessim.createRotaryEncoder.restype = ctypes.c_void_p
 tessim.execEncoder.argtypes = [ctypes.c_double, ctypes.c_void_p]
+tessim.cpuStatusFile.argtypes = [ctypes.c_void_p, architecture_family, ctypes.c_void_p]
 
 
 def createNodes(num) :
@@ -262,7 +263,7 @@ def execAll(time_div, time) :
     t = global_time_passed
     num_record = 0
     while(t < time + global_time_passed) : 
-        if(num_record % 50 == 0):
+        if(num_record % 10 == 0):
             recordNodes()
             simulation_time.append(t)
         for p in parts : 
@@ -332,6 +333,9 @@ class mcu :
 
     def setSPILogs(self, path):
         tessim.setSPIDebuggerLogs(self.mcu_obj, self.mcu_family, path)
+
+    def setCPUStatusLogs(self, path):
+        tessim.cpuStatusFile(self.mcu_obj, self.mcu_family, path)
         
 
 class dcMotor : 

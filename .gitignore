@@ -2,3 +2,4 @@ __pycache__/
 test_scripts/*/logs/
 test_scripts/*/compiled/
 test_scripts/*/build/
+*.csv
