@@ -23,7 +23,7 @@ driver2  = cli.generic_motor_drivers(2.5, 2.5)
 driver1.connectNodes(101, 24, 102, 104)
 driver2.connectNodes(101, 23, 103, 104)
 encoder = cli.encoder(500, 100, 7, 8, 0.5, 0.2)
-atmega = cli.mcu(cli.architecture_family.avr, cli.avr_mcu.atmega2560, b'compiled/open_loop.hex', 10000000)
+atmega = cli.mcu(cli.architecture_family.avr, cli.avr_mcu.atmega2560, b'compiled/exp_1_closed_loop.hex', 10000000)
 
 atmega.connectNodes(nodes)
 cli.putValue(9, 10)
@@ -33,7 +33,7 @@ cli.putValue(108, 50)
 
 atmega.initCPULogFile(b'logs/encoder_logs.txt')
 atmega.setCPUStatusLogs(b'logs/cpu_status.txt')
-mt.torque = 0.0003
+#mt.torque = 0.0003
 cli.execAll(0.000001, 1)
 
 plt.plot(cli.simulation_time, cli.recorded_nodes[7])
