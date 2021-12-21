@@ -24,7 +24,7 @@ int main(){
     OCR1B = 0x00;
     while(1){
         ADCSRA = 1 << ADEN | 1 << ADPS2 | 1 << ADSC;
-        ADMUX = 0x00;
+        ADMUX = 1 << ADC0 | 1 << REFS0;
         while(ADCSRA & (1 << ADSC));
         d = ADCL | (ADCH << 8);
         if(ref < d){

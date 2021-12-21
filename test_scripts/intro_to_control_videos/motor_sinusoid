@@ -1,0 +1,20 @@
+import sys
+import os
+from matplotlib import pyplot as plt
+
+
+tessim_path = os.environ['TESSIM_PATH']
+sys.path.insert(0, tessim_path)
+
+import cli_commands as cli
+cli.createNodes(6)
+mt = cli.dcMotor(0.0255,0.0255 , 40.4, 0.00077, 0.0000013, 0.0000029374)
+mt.setSpeedNode(2)
+mt.setNodes(0,1)
+
+src = cli.sine_source(1000, 0, 1,0)
+cli.execAll(0.0000001, 1)
+
+plt.plot(cli.simulation_time, cli.recorded_nodes[2])
+plt.plot(cli.simulation_time, cli.recorded_nodes[0])
+plt.show()
